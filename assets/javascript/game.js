@@ -6,15 +6,14 @@ var intFighterAttack=0;
 var intAttack=0;
 var intDefenderCounter=0;
 
-
 $(document).ready(function() {
 
   $(".imgTopImages").on("click", function(){
     if (boolFighterSet==false && boolDefenderSet==false) {
-        $(".imgTopImages").appendTo(".EnemiesCol");
-        $(this).appendTo(".FighterCol");
+        $(".imgTopImages").appendTo(".EnemiesDiv");
+        $(this).appendTo(".CharacterDiv");
         $(this).attr("class",$(this).attr("class")+" imgFighter");
-        $(".EnemiesCol>.imgTopImages").attr("class",$(".EnemiesCol>.imgTopImages").attr("class")+ " imgEnemies");
+        $(".EnemiesDiv>.imgTopImages").attr("class",$(".EnemiesDiv>.imgTopImages").attr("class")+ " imgEnemies");
         $(".imgFighter>.imgFooter").attr("class",$(".imgFighter>.imgFooter").attr("class")+" imgFighterFooter");
         boolFighterSet=true;
         intFighterHealth=$(this).attr("health-points");
@@ -27,7 +26,7 @@ $(document).ready(function() {
      else if (boolFighterSet==true && boolDefenderSet==false) {
 
         if ($(this).attr("class").indexOf("imgEnemies")>0) {
-          $(this).appendTo(".DefenderCol");
+          $(this).appendTo(".DefenderDiv");
           $(this).attr("class",$(this).attr("class").replace("imgEnemies","imgDefender"));
           $(".imgDefender>.imgFooter").attr("class","imgFooter imgDefenderFooter");
           boolDefenderSet=true;
@@ -48,38 +47,39 @@ $(document).ready(function() {
         console.log("Defender Health: " + intDefenderHealth);
         console.log("Fighter Health: " + intFighterHealth);
         console.log("Figher Attack:" + intFighterAttack);
-      }  
-
-    if (intDefenderHealth<=0) {
-        $(".imgDefenderFooter").text(intDefenderHealth + " Pts");
-        
-        console.log($(".imgEnemies").length);
-        if ($(".imgEnemies").length<=0) {
-          $(".GameStatus").html("<p>Yeah baby!. You've won. You put the grrr in swinger!</p><p>Click reset button to play again!</p>");
-          $(".imgDefender").remove();
-          $(".btnReset").css("display","inline");
-            boolDefenderSet=false;
-        }
-        else {
-           $(".GameStatus").html("<p>Yeah baby!. You defeated " + $(".imgDefender").attr("fighter-name") + ".</p><p>Click on an enemy to keep playing.</p>");
-           $(".imgDefender").remove();
-          $(".btnReset").css("display","inline");
-          boolDefenderSet=false;
-        } 
-      }
-    else if (intFighterHealth<0) {
+     
+        if (intDefenderHealth<=0 && intFighterHealth>0) {
+          $(".imgDefenderFooter").text(intDefenderHealth + " Pts");
+           boolDefenderSet=false;
+           console.log($(".imgEnemies").length);
+           console.log($(".imgDefender").length);
+           console.log($(".imgTopImages").length);
+          if ($(".imgEnemies").length<=0) {
+            $(".GameStatusDiv").html("<p>Yeah baby!. You've won. You put the grrr in swinger!</p><p>Click reset button to play again!</p>");
+            $(".imgDefender").remove();
+            $(".btnReset").css("display","inline");
+            }
+          else if ($(".imgEnemies").length>0) {
+            $(".GameStatusDiv").html("<p>Yeah baby!. You defeated " + $(".imgDefender").attr("fighter-name") + ".</p><p>Click on an enemy to keep playing.</p>");
+            $(".imgDefender").remove();
+            $(".btnReset").css("display","inline");
+          } 
+       }
+    
+    else if (intFighterHealth<=0) {
       $(".imgFighterFooter").text(intFighterHealth + " Pts");
-        $(".GameStatus").html("<p>You've been defeated by " + $(".imgDefender").attr("fighter-name") +".</p><p>Click reset button to get your mojo back!</p>");
+        $(".GameStatusDiv").html("<p>You've been defeated by " + $(".imgDefender").attr("fighter-name") +".</p><p>Click reset button to get your mojo back!</p>");
+          boolFighterSet=false;
           $(".btnReset").css("display","inline");
      }
+   
   
     else {
-
-
     $(".imgFighterFooter").text(intFighterHealth + " Pts");
-    $(".GameStatus").html("<p>You attacked " + $(".imgDefender").attr("fighter-name") + " for " + (parseInt(intFighterAttack)-parseInt(intAttack)).toString() + " damage.</p><p>" + $(".imgDefender").attr("fighter-name") + " attacked you back for " + intDefenderCounter + " damage.</p>");
+    $(".GameStatusDiv").html("<p>You attacked " + $(".imgDefender").attr("fighter-name") + " for " + (parseInt(intFighterAttack)-parseInt(intAttack)).toString() + " damage.</p><p>" + $(".imgDefender").attr("fighter-name") + " attacked you back for " + intDefenderCounter + " damage.</p>");
     $(".imgDefenderFooter").text(intDefenderHealth + " Pts");
   }
+   }  
 
  });
 

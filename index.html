@@ -35,55 +35,67 @@
 </header>
 
 <div class="container MainSection">
-	<div class="row YourCharacterSection">
-		<h2 class="SectionHeader">Your Character</h2>
-		<div class="col-md-12 FighterCol"> 
-				<div class="thumbnail imgTopImages imgFatBastard" health-points=150 attack-points=8 counter-points=20 fighter-name="Fat Bastard"> 
+	<div class="row TopSection">
+		
+		<div class="col-md-6 col-sm-6 col-xs-6 FighterCol"> 
+			<h2 class="SectionHeader">Your Character</h2>
+			<div class="CharacterDiv">
+				<div class="thumbnail imgTopImages imgFatBastard" health-points=150 attack-points=11 counter-points=20 fighter-name="Fat Bastard"> 
 					<div class="imgHeader">Fat Bastard</div>
-					<img src="http://i1159.photobucket.com/albums/p637/Adunn1168/Tumblr/tumblr_lt4mlbxFJy1qeor4y.gif" 	border="0" alt="Fat Bastard Pic" height="auto" width="150"> 
+					<img src="http://i1159.photobucket.com/albums/p637/Adunn1168/Tumblr/tumblr_lt4mlbxFJy1qeor4y.gif" 	border="0" alt="Fat Bastard Pic" height="100px" width="180px"> 
 					 <div class="imgFooter">150 Pts</div>
 				</div>
 				
-				<div class="thumbnail imgTopImages imgDrEvil" health-points=180 attack-points=8 counter-points=25 fighter-name="Dr. Evil">
+				<div class="thumbnail imgTopImages imgDrEvil" health-points=180 attack-points=7 counter-points=25 fighter-name="Dr. Evil">
 					<div class="imgHeader">Dr. Evil</div>
-					<img src="https://media.tenor.co/images/4561e771e890d8e5d9a2b731fec80e5a/tenor.gif" border="0" alt="DR Evil Pic" height="auto" width="150" >
+					<img src="https://media.tenor.co/images/4561e771e890d8e5d9a2b731fec80e5a/tenor.gif" border="0" alt="DR Evil Pic" height="100px" width="180px" >
 					<div class="imgFooter">180 Pts</div>
 				</div>
 				
-				<div class="thumbnail imgTopImages imgGoldmember" health-points=100 attack-points=8 counter-points=5 fighter-name="Goldmember">
+				<div class="thumbnail imgTopImages imgGoldmember" health-points=100 attack-points=40 counter-points=10 fighter-name="Goldmember">
 					<div class="imgHeader">Goldmember</div>
-					<img src="https://media.tenor.co/images/3b49930bcc21adc41750a497414312c1/tenor.gif" border="0" alt="Goldmember Pic" height="auto" width="150">
+					<img src="https://media.tenor.co/images/3b49930bcc21adc41750a497414312c1/tenor.gif" border="0" alt="Goldmember Pic" height="100px" width="180px">
 					<div class="imgFooter">100 Pts</div>
 				</div>	
 				
-				<div class="thumbnail imgTopImages imgAustinPowers" health-points=120 attack-points=8 counter-points=15 fighter-name="Austin Powers">
+				<div class="thumbnail imgTopImages imgAustinPowers" health-points=120 attack-points=30 counter-points=15 fighter-name="Austin Powers">
 					<div class="imgHeader">Austin Powers</div>
-					<img src="https://media.tenor.co/images/f514de3e118171452e15a29a4ef5e7fe/tenor.gif" border="0"  alt="Austin Powers Pic" height="auto" width="150">
+					<img src="https://media.tenor.co/images/f514de3e118171452e15a29a4ef5e7fe/tenor.gif" border="0"  alt="Austin Powers Pic" height="100px" width="180px">
 					<div class="imgFooter">120 Pts</div>
 				</div>
-	</div>	
-	</div>
+			</div>	
+			<button class="btn btn-primary btnAttack">Attack</button>
+		</div>	
+	
 
-	<div class="row EnemiesSection">
-		<h2 class="SectionHeader">Enemies Available to Attack</h2>
-		<div class="col-md-12 EnemiesCol"></div>	
-	    <button class="btn btn-primary btnAttack">Attack</button>
-	</div>
+	<!-- <div class="row EnemiesSection"> -->
+		
+	 	<div class="col-md-6 col-sm-6 col-xs-6 EnemiesCol">
+			<h2 class="SectionHeader">Enemies Available to Attack</h2>	
+		<div class="EnemiesDiv"></div>
+	 </div>  
+</div> 
+	<!-- </div> -->
 
 	<div class="row DefenderSection">
+		<div class="col-md-5 col-sm-5 col-xs-5 DefenderCol">
 		<h2 class="SectionHeader">Defender</h2>
-		<div class="col-md-12 DefenderCol"></div>	
-		<div class="GameStatus"></div>	
-	    <button class="btn btn-primary btnReset">Reset</button>
+			<div class="DefenderDiv"></div>	
+		</div>
+		<div class="col-md-7 col-sm-7 col-xs-7 GameStatusCol">
+			<div class="GameStatusDiv"></div>	
+	    	<button class="btn btn-primary btnReset">Reset</button>
+	    </div>
 	</div>
   
  </div>
-</body>
 
 <footer class="footer">
 	<div class="container">
 		<p id="PageFooter">&copy;Copyright 2017</p>
 	</div>
 </footer>
+</body>
+
 
 </html>

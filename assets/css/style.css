@@ -63,6 +63,7 @@ header {
 	position: relative;
    /*width: 15%;*/
 	/*height: auto;*/
+	/*height: 100px;*/
 	margin:5px;
 	padding-left padding-right: 4px;
 	float: left;
@@ -78,6 +79,15 @@ header {
 
 .imgDefender{
 	border: 4px solid green;
+		margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+}
+
+.thumbnail a > img, .thumbnail > img {
+	margin-right: auto;
+	margin-left: auto;
+	height: 100px;
 }
 
 .SectionHeader{
@@ -90,6 +100,8 @@ header {
 	float: left;
 	clear: both;
 }
+
+
 
 .btnReset{
 	background: blue;
@@ -109,19 +121,26 @@ header {
 	float:left;
 }*/
 .DefenderSection,.EnemiesSection{
-	clear:left;
+	float: left;
 	height: 166px;
 }
 
-.GameStatus{
-	font-size: 14px;
+.GameStatusDiv{
+	margin-top: 60px;
+	font-size: 18px;
 	padding: 1px;
 	color: purple;
-	margin: 2.5%;
+	margin-left: 2.5%;
+	margin-bottom: 2.5%;
+	/*margin: 2.5%;*/
+	float:left;
 }
+/*.GameStatusCol {
+	width:100%;
+}*/
 
 footer{
-	line-height: 40px;
+	line-height: 60px;
 	clear:left;
 }
 #PageFooter {
