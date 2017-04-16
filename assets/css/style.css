@@ -1,16 +1,16 @@
 @font-face {
-    font-family: ActionIs;
-    src: local(ActionIs), url('../fonts/actionis.ttf') format('opentype');
+    font-family: 'ActionIs';
+    src: url('../fonts/actionis.TTF') format('opentype');
 }
 
 body {
 	/*box-sizing: border-box;*/
-	background-image: url("../images/sunrise.jpg");
+	background-image: url("../images/Sunrise.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 18px;
     /*padding:0px;*/
-	margin: 0px;S
+	margin: 0px;
 	height: 100%;
 	width: 100%;
 }
